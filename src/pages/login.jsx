@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Navbar from "../Component/header";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import Notification from "../Component/notification";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showNotification, setShowNotification] = useState(false);
 
   const formik = useFormik({
@@ -23,6 +24,7 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       setShowNotification(true);
+      navigate('/dashboard')
     },
   });
 

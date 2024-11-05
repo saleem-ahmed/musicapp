@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo.png";
-import SeaechIcon from "../assets/search.svg";
-import DropdownIcon from "../assets/dropdown.svg";
-import Line from "../assets/Line.svg";
-const Navbar = () => {
+import Logo from "../assets/logo-dark.png";
+import SeaechIcon from "../assets/search-dark.svg";
+import DropdownIcon from "../assets/dropdown-dark.svg";
+import NotifIcon from "../assets/notifification.png";
+const Navbar2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-transparent py-[40px] shadow-lg z-50 relative top-0">
+    <nav className="bg-white py-[20px] z-50 relative top-0">
       <div className="w-[85%] mx-auto flex justify-between items-center gap-[20px] md:gap-[50px]">
         {/* Logo */}
         <div className="flex items-center max-w-content">
@@ -27,46 +27,13 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu and Search */}
-        <div className="hidden md:flex  justify-between items-center space-x-4 w-full">
-          {/* Dropdown Menu */}
-          <div className="relative flex gap-[10px]">
-            <button
-              className="text-white text-[16px] font-medium flex gap-[10px] items-center"
-              onClick={toggleDropdown}
-            >
-              Menu
-              <img src={DropdownIcon} alt="" />
-            </button>
-          </div>
-          {isDropdownOpen && (
-            <div className="absolute top-[70%] left-0 mt-2 w-[98%] bg-white rounded-md shadow-lg z-20 flex gap-[10px]">
-              <a
-                href="#"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-              >
-                Menu Item 1
-              </a>
-              <a
-                href="#"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-              >
-                Menu Item 2
-              </a>
-              <a
-                href="#"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-              >
-                Menu Item 3
-              </a>
-            </div>
-          )}
-          <img src={Line} alt="" />
+        <div className="hidden md:flex  justify-between items-center space-x-4 w-full max-w-[800px]">
           {/* Search Bar */}
-          <div className="relative w-full max-w-[900px] py-2">
+          <div className="relative w-full  py-2">
             <input
               type="text"
               placeholder="Search"
-              className="w-full text-white rounded-[20px] bg-transparent border border-white py-2 pl-10 focus:outline-none placeholder:text-white"
+              className="w-full text-[#D2D2D1] rounded-[20px] bg-transparent border border-[#D2D2D1] py-2 pl-10 focus:outline-none placeholder:text-[#D2D2D1]"
             />
             <img
               className="absolute top-1/2 left-3 transform -translate-y-1/2"
@@ -74,23 +41,21 @@ const Navbar = () => {
               alt="Search Icon"
             />
           </div>
-          <img src={Line} alt="" />
         </div>
         {/* Auth Links */}
-        <div className="hidden md:flex justify-between items-center space-x-4 text-white text-sm  max-w-content">
-          <Link
-            to="/login"
-            className="text-[16px] font-medium whitespace-nowrap"
-          >
-            Log In
-          </Link>
-          <img src={Line} alt="" />
-          <Link
-            to="/signup"
-            className="text-[16px] font-medium whitespace-nowrap"
-          >
-            Sign Up
-          </Link>
+        <div className="hidden md:flex justify-between items-center space-x-4 text-gray-800 text-sm  max-w-content">
+          <img
+            className="w-[40px] h-[40px] ursor-pointer"
+            src={NotifIcon}
+            alt=""
+          />
+          <div className="bg-[#FAFAFA] rounded-lg flex  justify-between items-center w-[150px]">
+                <div className="bg-[#C4C4C4] w-[40px] h-[40px] rounded-full"></div>
+                <span>
+                    kalim
+                </span>
+                <img className="mr-2" src={DropdownIcon} alt="" />
+          </div>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -135,39 +100,6 @@ const Navbar = () => {
 
             {/* Desktop Menu and Search */}
             <div className="hidden md:flex  justify-between items-center space-x-4 w-full">
-              {/* Dropdown Menu */}
-              <div className="relative flex gap-[10px]">
-                <button
-                  className="text-white text-[16px] font-medium flex gap-[10px] items-center"
-                  onClick={toggleDropdown}
-                >
-                  Menu
-                  <img src={DropdownIcon} alt="" />
-                </button>
-              </div>
-              {isDropdownOpen && (
-                <div className="absolute top-[70%] left-0 mt-2 w-[98%] bg-white rounded-md shadow-lg z-20 flex gap-[10px]">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Menu Item 1
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Menu Item 2
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Menu Item 3
-                  </a>
-                </div>
-              )}
-              <img src={Line} alt="" />
               {/* Search Bar */}
               <div className="relative w-full max-w-[900px] py-2">
                 <input
@@ -181,7 +113,7 @@ const Navbar = () => {
                   alt="Search Icon"
                 />
               </div>
-              <img src={Line} alt="" />
+              {/* <img src={Line} alt="" /> */}
             </div>
             {/* Auth Links */}
             <div className="hidden md:flex justify-between items-center space-x-4 text-white text-sm  max-w-content">
@@ -191,7 +123,7 @@ const Navbar = () => {
               >
                 Log In
               </Link>
-              <img src={Line} alt="" />
+              {/* <img src={Line} alt="" /> */}
               <Link
                 to="/signup"
                 className="text-[16px] font-medium whitespace-nowrap"
@@ -206,4 +138,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
