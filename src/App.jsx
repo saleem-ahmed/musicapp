@@ -12,6 +12,7 @@ import BookMark from "./pages/dashboard/Bookmark";
 import Buy_Sell from "./pages/dashboard/Buy&sell";
 import Groups from "./pages/dashboard/Groups";
 import Friends from "./pages/dashboard/Friends";
+import Profile from "./pages/dashboard/profile";
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
           <Route path="buy_sell" element={<Buy_Sell />} />
           <Route path="groups" element={<Groups/>} />
           <Route path="friends" element={<Friends/> } />
+          <Route path="profile" element={<Profile/> } />
         </Route>
       </Routes>
     </>

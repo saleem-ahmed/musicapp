@@ -5,8 +5,12 @@ import SideImg1 from "../../assets/sideimg1.png";
 import SideImg2 from "../../assets/sideimg2.png";
 import SideImg3 from "../../assets/sideimg3.png";
 import Consert from "../../assets/consert.png";
-import Img1 from "../../assets/notification-img.png";
+
+
+
 const Notifification = () => {
+
+
   return (
     <>
       <div className="flex flex-col md:flex-row gap-[20px]">

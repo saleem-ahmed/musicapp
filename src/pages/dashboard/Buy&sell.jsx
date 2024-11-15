@@ -3,7 +3,7 @@ import React from "react";
 const Buy_Sell = () => {
   return (
     <>
-      <h1>hello</h1>
+      <h1>Buy/Sell</h1>
     </>
   );
 };

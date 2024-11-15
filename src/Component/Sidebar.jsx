@@ -6,9 +6,14 @@ import HomeIconActive from "../assets/icon/Ahome-icon.png";
 import NotificationIcon from "../assets/icon/notification.png";
 import NotificationIconActive from "../assets/icon/Anotification.png";
 import MessageIcon from "../assets/icon/message.png";
+import AMessageIcon from "../assets/icon/Amessage.png";
 import BookmarkIcon from "../assets/icon/bookmark.png";
+import ABookmarkIcon from "../assets/icon/Abookmark.png";
 import Buy_sellIcon from "../assets/icon/buy_sell.png";
+import ABuy_sellIcon from "../assets/icon/Abuy_sell.png";
 import GroupsIcon from "../assets/icon/groups.png";
+import UserIcon from "../assets/icon/user.png";
+import AUserIcon from "../assets/icon/Auser.png";
 
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
@@ -77,7 +82,6 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             )}
           </NavLink>
         </li>
-       
         <li>
           <NavLink
             to="/dashboard/message"
@@ -87,34 +91,59 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
               }`
             }
           >
-            <img className="w-[18px] h-[18px]" src={MessageIcon} alt="Home" />
-            <span className="ms-3">Messages</span>
+            {({ isActive }) => (
+              <>
+                <img
+                  className="w-[18px] h-[18px]"
+                  src={isActive ? AMessageIcon : MessageIcon}
+                  alt="Home"
+                />
+                <span className="ms-3">Messages</span>
+              </>
+            )}
           </NavLink>
         </li>
+
         <li>
           <NavLink
             to="/dashboard/bookmark"
             className={({ isActive }) =>
-              `flex items-center p-2  ${
+              `flex items-center p-2 ${
                 isActive ? "text-[#111111]" : "text-[#6A5F5F]"
               }`
             }
           >
-            <img className="w-[18px] h-[18px]" src={BookmarkIcon} alt="Home" />
-            <span className="ms-3">Bookmarks</span>
+            {({ isActive }) => (
+              <>
+                <img
+                  className="w-[18px] h-[18px]"
+                  src={isActive ? ABookmarkIcon : BookmarkIcon}
+                  alt="Home"
+                />
+                <span className="ms-3">Bookmarks</span>
+              </>
+            )}
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/dashboard/buy_sell"
             className={({ isActive }) =>
-              `flex items-center p-2  ${
+              `flex items-center p-2 ${
                 isActive ? "text-[#111111]" : "text-[#6A5F5F]"
               }`
             }
           >
-            <img className="w-[18px] h-[18px]" src={Buy_sellIcon} alt="Home" />
-            <span className="ms-3">Buy/Sell</span>
+            {({ isActive }) => (
+              <>
+                <img
+                  className="w-[18px] h-[18px]"
+                  src={isActive ? ABuy_sellIcon : Buy_sellIcon}
+                  alt="Home"
+                />
+                <span className="ms-3">Buy/Sell</span>
+              </>
+            )}
           </NavLink>
         </li>
         <li>
@@ -141,6 +170,27 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
           >
             <img className="w-[18px] h-[18px]" src={GroupsIcon} alt="Home" />
             <span className="ms-3">Friends</span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/dashboard/profile"
+            className={({ isActive }) =>
+              `flex items-center p-2 ${
+                isActive ? "text-[#111111]" : "text-[#6A5F5F]"
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                <img
+                  className="w-[18px] h-[18px]"
+                  src={isActive ? AUserIcon : UserIcon}
+                  alt="Home"
+                />
+                <span className="ms-3">My Profile</span>
+              </>
+            )}
           </NavLink>
         </li>
       </ul>
