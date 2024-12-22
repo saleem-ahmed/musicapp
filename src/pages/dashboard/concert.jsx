@@ -1,54 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import SeaechIcon from "../../assets/search-dark.svg";
+import bgImg from "../../assets/concert-bg.png";
+import CImg1 from "../../assets/concert-img1.png";
+import CImg2 from "../../assets/concert-img2.png";
+import CImg3 from "../../assets/concert-img3.png";
 import SideImg1 from "../../assets/sideimg1.png";
 import SideImg2 from "../../assets/sideimg2.png";
 import SideImg3 from "../../assets/sideimg3.png";
 import Consert from "../../assets/consert.png";
-import Post from "../../Component/post";
 
-
-const tabs = [
-  { id: 1, name: 'All Bookmarks', content: <Post /> },
-  { id: 2, name: 'Photos', content: 'No content' },
-  { id: 3, name: 'Videos', content: 'No content' },
-  { id: 4, name: 'Audio', content: 'No content' },
-  { id: 5, name: 'Posts', content: 'No content' },
-];
-
-const BookMark = () => {
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+const Concert = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-[20px]">
         <div className="flex-1">
           <div>
             <h2 className="texxt-[#000000CC] font-[700] text-[24px] mb-[20px]">
-              Bookmark
+              consert
             </h2>
           </div>
-
-          <div className="flex">
-            <div className="w-1/4 border-r border-gray-200">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`w-full px-4 py-2 text-left ${selectedTab.id === tab.id
-                    ? 'bg-[#EADD9E] text-gray-800'
-                    : 'bg-white text-gray-800'
-                    } hover:bg-[#EADD9E]`}
-                  onClick={() => setSelectedTab(tab)}
-                >
-                  {tab.name}
-                </button>
-              ))}
-            </div>
-            <div className="w-3/4 p-4">
-              <h2 className="text-xl font-bold">{selectedTab.name}</h2>
-              <p>{selectedTab.content}</p>
-            </div>
+          <img className="w-[100%]" src={bgImg} alt="" />
+          <p className="my-2">
+            Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
+            consectetuLorem ipsum dolor sit amet consectetur Lorem ipsum dolor
+            sit amet consectetur..Lorem ipsum dolor sit amet consectetur Lorem
+            ipsum dolor sit amet consectetur..r..
+          </p>
+          <div className="flex my-2 flex-row gap-[20px] flex-wrap">
+            <img className="max-w-[280px] w-[100%]" src={CImg1} alt="" />
+            <img className="max-w-[280px] w-[100%]" src={CImg2} alt="" />
+            <img className="max-w-[280px] w-[100%]" src={CImg3} alt="" />
           </div>
-
-
+          <button className="bg-[#CDAB00] text-white px-[20px]">
+            Register
+          </button>
           {/* content must hete */}
         </div>
         <div className="w-full md:w-[250px] flex flex-col border-l border-[#D2D2D1] pl-5">
@@ -86,4 +71,4 @@ const BookMark = () => {
     </>
   );
 };
-export default BookMark;
+export default Concert;

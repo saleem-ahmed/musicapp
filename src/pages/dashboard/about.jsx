@@ -1,19 +1,13 @@
 import React, { useState } from "react";
-import Profileimg from "../../assets/profile.png";
 import SeaechIcon from "../../assets/search-dark.svg";
 import SideImg1 from "../../assets/sideimg1.png";
 import SideImg2 from "../../assets/sideimg2.png";
 import SideImg3 from "../../assets/sideimg3.png";
 import Consert from "../../assets/consert.png";
-import EditImg from "../../assets/edit.png";
-import ShareImg from "../../assets/share.png";
-import Pic1 from "../../assets/picture.png";
-import Pic2 from "../../assets/video.png";
-import Pic3 from "../../assets/microphone.png";
+import Img1 from "../../assets/img1.png";
+import Img2 from "../../assets/img2.png";
 import Img3 from "../../assets/songpic.png";
-import Pic4 from "../../assets/Vector.png";
-
-const Profile = () => {
+const About = () => {
   const [activeTab, setActiveTab] = useState("followers");
   return (
     <>
@@ -21,65 +15,36 @@ const Profile = () => {
         <div className="flex-1">
           <div>
             <h2 className="texxt-[#000000CC] font-[700] text-[24px] mb-[20px]">
-              Profile
+              Jasica Alba
             </h2>
           </div>
-          <div className="h-[280px] bg-[url(assets/profile-bg.png)] bg-cover bg-no-repeat flex items-end rounded-[16px]">
-            <div className="flex justify-between items-center w-full h-[60px] p-[16px]">
-              <div className="flex gap-[15px]">
-                <img className="w-[60px] h-[60px]" src={Profileimg} alt="" />
-                <div className="flex flex-col gap-[5px]">
-                  <h3 className="text-[#CDAB00] text-[18px] font-bold">
-                    Kalim Rana
-                  </h3>
-                  <p className="text-[#686868] text-[14px] font-semibold">
-                    @kalimhjdja
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-[10px]">
-                <button className="bg-[#F1F1F1] text-[#CDAB00] border border-[1px] border-solid border-[#C1BEEC] flex items-center gap-[10px] rounded-[60px] px-[17px] py-[5px]">
-                  <img className="w-[20px] h-[20px]" src={EditImg} alt="" />
-                  Edit Profile
-                </button>
-                <button className="bg-[#F1F1F1] text-[#CDAB00] border border-[1px] border-solid border-[#C1BEEC] flex items-center gap-[10px] rounded-[60px] px-[17px] py-[5px]">
-                  <img className="w-[20px] h-[20px]" src={ShareImg} alt="" />
-                  Edit Profile
-                </button>
-              </div>
-            </div>
-          </div>
+          <div className="h-[280px] bg-[url(assets/aboutimg.png)] bg-cover bg-no-repeat flex items-end rounded-[16px]"></div>
 
-          <div className="bg-[#F1F1F1] rounded-[4px] p-[16px] my-[30px]">
-            <div className="bg-white h-[20vh] p-[16px]  rounded-[4px] flex flex-col justify-between">
-              <p className="text-[#9A9A9A]">Compose new post</p>
-              <div className="flex gap-[20px]">
-                <img
-                  className="w-[20px] h-[20px] cursor-pointer"
-                  src={Pic1}
-                  alt=""
-                />
-                <img
-                  className="w-[20px] h-[20px] cursor-pointer"
-                  src={Pic2}
-                  alt=""
-                />
-                <img
-                  className="w-[20px] h-[20px] cursor-pointer"
-                  src={Pic3}
-                  alt=""
-                />
-                <img
-                  className="w-[20px] h-[20px] cursor-pointer"
-                  src={Pic4}
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="flex justify-end gap-[30px] mt-[10px]">
-              <button className="text-[#CDAB00]">Post Later</button>
-              <button className="bg-[#CDAB00] text-white px-[20px]">
-                Post
+          <div className="my-[30px]">
+            <h2 className="texxt-[#000000CC] font-[700] text-[24px] mb-[20px]">
+              About
+            </h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.printer took a
+              galley of type and scrambled it to make a type specimen book.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </p>
+
+            <div className="flex justify-start gap-[30px] mt-[20px]">
+              <button className="bg-[#CDAB00] text-white p-[10px]">
+                Send Request
+              </button>
+              <button className="bg-[#CDAB00] text-white p-[10px]">
+                Follow
+              </button>
+              <button className="bg-[#CDAB00] text-white p-[10px]">
+                Contact
               </button>
             </div>
           </div>
@@ -110,9 +75,13 @@ const Profile = () => {
             <div className="p-4">
               {activeTab === "followers" && <div>Followers</div>}
               {activeTab === "Buy/Sell" && (
-                <div>
-                  <img src={Img3} alt="" />
-                </div>
+                <>
+                  <div>
+                    <img className="w-full" src={Img1} alt="" />
+                    <img className="w-full mt-[30px]" src={Img2} alt="" />
+                    <img className="w-full mt-[30px]" src={Img3} alt="" />
+                  </div>
+                </>
               )}
               {activeTab === "likes" && <div>Likes</div>}
               {activeTab === "posts" && <div>Posts</div>}
@@ -156,4 +125,4 @@ const Profile = () => {
     </>
   );
 };
-export default Profile;
+export default About;

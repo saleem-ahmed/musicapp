@@ -13,6 +13,9 @@ import Buy_Sell from "./pages/dashboard/Buy&sell";
 import Groups from "./pages/dashboard/Groups";
 import Friends from "./pages/dashboard/Friends";
 import Profile from "./pages/dashboard/profile";
+import Concert from "./pages/dashboard/concert";
+import About from "./pages/dashboard/about";
+import Sell from "./pages/dashboard/sell";
 function App() {
   return (
     <>
@@ -32,6 +35,9 @@ function App() {
           <Route path="groups" element={<Groups/>} />
           <Route path="friends" element={<Friends/> } />
           <Route path="profile" element={<Profile/> } />
+          <Route path="concert" element={<Concert/> } />
+          <Route path="about" element={<About/> } />
+          <Route path="sell" element={<Sell/> } />
         </Route>
       </Routes>
     </>

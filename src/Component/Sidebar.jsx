@@ -193,6 +193,27 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             )}
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/dashboard/concert"
+            className={({ isActive }) =>
+              `flex items-center p-2 ${
+                isActive ? "text-[#111111]" : "text-[#6A5F5F]"
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                <img
+                  className="w-[18px] h-[18px]"
+                  src={isActive ? AUserIcon : UserIcon}
+                  alt="Home"
+                />
+                <span className="ms-3">Concert</span>
+              </>
+            )}
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

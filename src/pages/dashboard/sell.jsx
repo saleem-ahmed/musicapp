@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Profileimg from "../../assets/profile.png";
 import SeaechIcon from "../../assets/search-dark.svg";
 import SideImg1 from "../../assets/sideimg1.png";
@@ -10,18 +10,16 @@ import ShareImg from "../../assets/share.png";
 import Pic1 from "../../assets/picture.png";
 import Pic2 from "../../assets/video.png";
 import Pic3 from "../../assets/microphone.png";
-import Img3 from "../../assets/songpic.png";
 import Pic4 from "../../assets/Vector.png";
 
-const Profile = () => {
-  const [activeTab, setActiveTab] = useState("followers");
+const Sell = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-[20px]">
         <div className="flex-1">
           <div>
             <h2 className="texxt-[#000000CC] font-[700] text-[24px] mb-[20px]">
-              Profile
+            Sell
             </h2>
           </div>
           <div className="h-[280px] bg-[url(assets/profile-bg.png)] bg-cover bg-no-repeat flex items-end rounded-[16px]">
@@ -84,42 +82,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div>
-            <div className="flex overflow-x-auto overflow-y-hidden border-b border-gray-200 whitespace-nowrap dark:border-gray-700">
-              {[
-                "followers",
-                "Buy/Sell",
-                "likes",
-                "posts",
-                "photos",
-                "video",
-              ].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`inline-flex items-center h-10 px-4 -mb-px text-sm text-center ${
-                    activeTab === tab
-                      ? "text-blue-600 border-b-2 border-blue-500 dark:border-blue-400 dark:text-blue-300"
-                      : "text-gray-700 border-b-2 border-transparent dark:text-white cursor-base hover:border-gray-400"
-                  } sm:text-base whitespace-nowrap focus:outline-none`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-            <div className="p-4">
-              {activeTab === "followers" && <div>Followers</div>}
-              {activeTab === "Buy/Sell" && (
-                <div>
-                  <img src={Img3} alt="" />
-                </div>
-              )}
-              {activeTab === "likes" && <div>Likes</div>}
-              {activeTab === "posts" && <div>Posts</div>}
-              {activeTab === "photos" && <div>Photos</div>}
-              {activeTab === "video" && <div>Video</div>}
-            </div>
-          </div>
+        
         </div>
         <div className="w-full md:w-[250px] flex flex-col border-l border-[#D2D2D1] pl-5">
           <div>
@@ -156,4 +119,4 @@ const Profile = () => {
     </>
   );
 };
-export default Profile;
+export default Sell;

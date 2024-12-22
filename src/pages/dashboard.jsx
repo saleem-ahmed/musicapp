@@ -47,7 +47,7 @@ const Dashboard = () => {
       </aside>
 
       <div className="p-4 sm:ml-64">
-        <div className="p-4 mt-[100px]">
+        <div className="mt-[100px]">
           <Outlet />
         </div>
       </div>
